@@ -32,5 +32,11 @@ double Ultrino::getDistance()
 	digitalWrite(_triggerPin, LOW);
 
 	double responseTime = pulseIn(_pulsePin, HIGH); // In microseconds
+	double distance = (responseTime / 1E6) * US_SPEED / 2.0;
+
+	if (distance == 0)
+	{
+		return -1;
+	}
 	return (responseTime / 1E6) * US_SPEED / 2.0;
 }

@@ -12,4 +12,5 @@ void setup() {
 void loop() {
   Serial.print("Distance: ");
   Serial.println(us.getDistance());
+  delay(60);	// Recommended by manufacturer
 }

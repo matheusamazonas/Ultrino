@@ -23,6 +23,16 @@ Ultrino::Ultrino(uint8_t triggerPin, uint8_t pulsePin)
 */
 double Ultrino::getDistance()
 {
+	// Arduino's default is 1 second
+	getDistance(1000000);
+}
+
+/**
+	@param: timeOut: Time out in microseconds
+	Returns the distance in meters
+*/
+double Ultrino::getDistance(long timeOut)
+{
 	digitalWrite(_triggerPin, LOW);
 	// The delay here is arbitrary. Just waiting some time to bring it up again
 	delayMicroseconds(3);
@@ -31,7 +41,7 @@ double Ultrino::getDistance()
 	delayMicroseconds(10);
 	digitalWrite(_triggerPin, LOW);
 
-	double responseTime = pulseIn(_pulsePin, HIGH); // In microseconds
+	double responseTime = pulseIn(_pulsePin, HIGH, timeOut); // In microseconds
 	double distance = (responseTime / 1E6) * US_SPEED / 2.0;
 
 	if (distance == 0)

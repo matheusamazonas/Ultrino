@@ -8,7 +8,6 @@
 #define Ultrino_h
 
 #include <stdint.h>
-#include "Arduino.h"
 
 class Ultrino
 {

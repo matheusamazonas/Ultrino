@@ -1,5 +1,5 @@
 # Ultrino
-Arduino library for the HC-SR04 ultrasonic sensor
+Arduino library for the HC-SR04 ultrasonic sensor. The distance is returned in centimeters.
 
 Linux: : [![Build Status](https://travis-ci.com/matheusamazonas/Ultrino.svg?branch=master)](https://travis-ci.com/matheusamazonas/Ultrino)
 

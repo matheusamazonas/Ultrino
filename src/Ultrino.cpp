@@ -19,7 +19,7 @@ Ultrino::Ultrino(uint8_t triggerPin, uint8_t pulsePin)
 }
 
 /**
-	Returns the distance in meters
+	Returns the distance in centimeters
 */
 double Ultrino::getDistance()
 {
@@ -29,7 +29,7 @@ double Ultrino::getDistance()
 
 /**
 	@param: timeOut: Time out in microseconds
-	Returns the distance in meters
+	Returns the distance in centimeters
 */
 double Ultrino::getDistance(long timeOut)
 {
@@ -42,11 +42,11 @@ double Ultrino::getDistance(long timeOut)
 	digitalWrite(_triggerPin, LOW);
 
 	double responseTime = pulseIn(_pulsePin, HIGH, timeOut); // In microseconds
-	double distance = (responseTime / 1E6) * US_SPEED / 2.0;
+	double distance = (responseTime / 1E4) * US_SPEED / 2.0;
 
 	if (distance == 0)
 	{
 		return -1;
 	}
-	return (responseTime / 1E6) * US_SPEED / 2.0;
+	return distance;
 }

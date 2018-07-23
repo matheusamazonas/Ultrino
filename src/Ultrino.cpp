@@ -24,7 +24,7 @@ Ultrino::Ultrino(uint8_t triggerPin, uint8_t pulsePin)
 double Ultrino::getDistance()
 {
 	// Arduino's default is 1 second
-	getDistance(1000000);
+	return getDistance(1000000);
 }
 
 /**

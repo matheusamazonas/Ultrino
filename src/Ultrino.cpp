@@ -11,9 +11,13 @@
 
 Ultrino::Ultrino(uint8_t triggerPin, uint8_t pulsePin)
 {
-	_triggerPin = triggerPin;
-	_pulsePin = pulsePin;
+	_triggerPin = 2;
+	_pulsePin = 4;
 
+}
+
+void Ultrino::begin()
+{
 	pinMode(_triggerPin, OUTPUT);
 	pinMode(_pulsePin, INPUT);
 }

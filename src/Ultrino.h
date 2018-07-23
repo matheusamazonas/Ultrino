@@ -13,9 +13,9 @@ class Ultrino
 {
 public:
 	Ultrino(uint8_t triggerPin, uint8_t pulsePin);
+	void begin();
 	double getDistance();
 	double getDistance(long timeOut);
-
 private:
 	uint8_t _triggerPin;
 	uint8_t _pulsePin;

@@ -6,6 +6,7 @@ void setup() {
   Serial.begin(9600);
   while (!Serial) {
   }
+  us.begin();
   Serial.println("Setup is done");
 }
 
